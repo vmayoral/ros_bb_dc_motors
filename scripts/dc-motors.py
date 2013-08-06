@@ -4,7 +4,7 @@ from std_msgs.msg import String
 
 import Adafruit_BBIO.PWM as PWM
 
-pin = "P9_14"
+pin = "P9_20"
 
 def callback(data):
     rospy.loginfo(rospy.get_name() + ": I heard %s" % data.data)

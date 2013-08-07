@@ -4,7 +4,9 @@ from std_msgs.msg import String
 
 import Adafruit_BBIO.PWM as PWM
 
-pin = "P9_42"
+# The DRV8837 needs two PWM signals to control a single motor so:
+pin = "P9_42" 
+pin2 = "P9_28"
 
 def callback(data):
     #rospy.loginfo("\n");
@@ -33,6 +35,7 @@ def dcmotors():
     # init the PWM
     ##PWM.start(channel, duty, freq=2000)
     PWM.start(pin, 90)
+    PWM.start(pin2, 100)
 
     rospy.spin()
 
